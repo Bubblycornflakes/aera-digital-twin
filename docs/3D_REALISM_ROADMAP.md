@@ -1,0 +1,4 @@
+# Scene upgrade sequence
+Retain the current React Three Fiber scene, cutaway/plan/isometric camera, equipment inspector, shader water, particle diffusers and playback. Next derive mesh scale, probe positions, pipe lengths and diffuser spacing from the same versioned geometry used for working volume. Check volume and diffuser count against drawings. Provide a fallback for missing survey data with an illustrative label.
+
+Add x-ray materials, full-screen navigation, day/night environments and quality presets without changing simulation time. Drive staged blower animation from individual equipment states once staging exists. Benchmark GPU frame time and memory at desktop and laptop widths, compare identical camera screenshots, and test pause/seek/control changes. The mixed-tank model provides one concentration per constituent per tank. Foam and bubbles are visual explanations; spatial chemistry would require another verified model.

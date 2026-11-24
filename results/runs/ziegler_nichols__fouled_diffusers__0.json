@@ -1,0 +1,192 @@
+{
+ "tuner": "ziegler_nichols",
+ "plant": "fouled_diffusers",
+ "seed": 0,
+ "budget": 40,
+ "stage": 1,
+ "model_version": "2",
+ "fingerprint": "f642ace9210ed707",
+ "trials": 3,
+ "answer": {
+  "so_ref": 2.0,
+  "k_do": 107.89523891943819,
+  "ti_do": 0.004936016673385499,
+  "kla_max": 360.0
+ },
+ "feasible": false,
+ "aeration_energy_kwh_d": 4194.9,
+ "reference_energy_kwh_d": 4191.3,
+ "saving_pct": -0.09,
+ "scenarios_failed": [
+  "dry_sensor_fault",
+  "rain_liquor_and_fault"
+ ],
+ "failures": [
+  {
+   "scenario": "dry_sensor_fault",
+   "rule": "snh",
+   "share": 0.5506,
+   "reference": 0.5432,
+   "excess": 0.0024
+  },
+  {
+   "scenario": "rain_liquor_and_fault",
+   "rule": "snh",
+   "share": 0.5446,
+   "reference": 0.5357,
+   "excess": 0.0039
+  }
+ ],
+ "scenarios": {
+  "rain": {
+   "aeration_energy_kwh_d": 4146.2439536140755,
+   "eqi": 8632.412788729489,
+   "reference_energy_kwh_d": 4140.4962240682335,
+   "reference_eqi": 8632.825706863485,
+   "share_over_limit": {
+    "total_n": 0.07589285714285714,
+    "total_cod": 0.0,
+    "snh": 0.5372023809523809,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.0,
+   "reference_share_over_limit": {
+    "total_n": 0.07589285714285714,
+    "total_cod": 0.0,
+    "snh": 0.5386904761904762,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "feasible": true,
+   "failures": [],
+   "violation": 0
+  },
+  "storm": {
+   "aeration_energy_kwh_d": 4226.386954047558,
+   "eqi": 7702.852078519672,
+   "reference_energy_kwh_d": 4222.732852859489,
+   "reference_eqi": 7703.234431020258,
+   "share_over_limit": {
+    "total_n": 0.11160714285714286,
+    "total_cod": 0.0,
+    "snh": 0.5669642857142857,
+    "tss": 0.002976190476190476,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.0,
+   "reference_share_over_limit": {
+    "total_n": 0.11160714285714286,
+    "total_cod": 0.0,
+    "snh": 0.5669642857142857,
+    "tss": 0.002976190476190476,
+    "bod5": 0.0
+   },
+   "feasible": true,
+   "failures": [],
+   "violation": 0
+  },
+  "dry_return_liquor": {
+   "aeration_energy_kwh_d": 4226.072369653914,
+   "eqi": 6832.213086797082,
+   "reference_energy_kwh_d": 4221.376177841051,
+   "reference_eqi": 6832.263039444777,
+   "share_over_limit": {
+    "total_n": 0.23065476190476192,
+    "total_cod": 0.0,
+    "snh": 0.5059523809523809,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.0,
+   "reference_share_over_limit": {
+    "total_n": 0.23065476190476192,
+    "total_cod": 0.0,
+    "snh": 0.5059523809523809,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "feasible": true,
+   "failures": [],
+   "violation": 0
+  },
+  "dry_sensor_fault": {
+   "aeration_energy_kwh_d": 4131.345313948878,
+   "eqi": 6594.898941418344,
+   "reference_energy_kwh_d": 4117.3824299171265,
+   "reference_eqi": 6581.07536496427,
+   "share_over_limit": {
+    "total_n": 0.1324404761904762,
+    "total_cod": 0.0,
+    "snh": 0.5505952380952381,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.0,
+   "reference_share_over_limit": {
+    "total_n": 0.1324404761904762,
+    "total_cod": 0.0,
+    "snh": 0.5431547619047619,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "feasible": false,
+   "failures": [
+    {
+     "rule": "snh",
+     "share": 0.5506,
+     "reference": 0.5432,
+     "excess": 0.0024
+    }
+   ],
+   "violation": 0.0024
+  },
+  "rain_liquor_and_fault": {
+   "aeration_energy_kwh_d": 4244.518973632038,
+   "eqi": 8997.690423773038,
+   "reference_energy_kwh_d": 4254.312600759969,
+   "reference_eqi": 8981.265327517667,
+   "share_over_limit": {
+    "total_n": 0.12202380952380952,
+    "total_cod": 0.0,
+    "snh": 0.5446428571428571,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.0,
+   "reference_share_over_limit": {
+    "total_n": 0.12351190476190477,
+    "total_cod": 0.0,
+    "snh": 0.5357142857142857,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "feasible": false,
+   "failures": [
+    {
+     "rule": "snh",
+     "share": 0.5446,
+     "reference": 0.5357,
+     "excess": 0.0039
+    }
+   ],
+   "violation": 0.0039
+  }
+ },
+ "history": [
+  {
+   "params": {
+    "so_ref": 2.0,
+    "k_do": 107.89523891943819,
+    "ti_do": 0.004936016673385499,
+    "kla_max": 360.0
+   },
+   "energy": 4207.725927062226,
+   "feasible": true,
+   "violation": 0
+  }
+ ],
+ "seconds": 354,
+ "scored_model_version": "2",
+ "scored_fingerprint": "f642ace9210ed707"
+}

@@ -1,0 +1,4 @@
+# Validation
+Reproduce annual throughput, electricity, cost, Scope 2 and individual end-use estimates before comparing controllers. Keep rounding explicit. Algebraic tests isolate the influent/effluent, transfer and reaction terms. Integration tests compare solver tolerances at the same controller interval and integrate kW independently. Use identical seeds for paired experiments and retain entire trajectories.
+
+Check gain saturation, recovery, static balances and both event windows. For later optimisation test held-out loads and sensor faults. Reject energy-only winners when treatment limits fail. Browser acceptance will exercise parameter editing, API failure, charts, playback, selection and export. Measure graphics performance on identified hardware. No field data are available for calibration or validation.

@@ -1,0 +1,13 @@
+const {chromium}=require('playwright')
+const assert=require('node:assert/strict')
+;(async()=>{const browser=await chromium.launch({channel:'chrome',args:['--enable-unsafe-swiftshader','--use-angle=swiftshader']})
+try{
+ const p=await browser.newPage({viewport:{width:1500,height:1100}});await p.goto('http://127.0.0.1:5161');const resp=p.waitForResponse(r=>r.url().endsWith('/api/asm1/playback'));await p.getByLabel('Process model').selectOption('asm1');const run=await(await resp).json()
+ const tank=p.getByLabel('Inspect reactor');await tank.selectOption('0');await p.getByRole('button',{name:'Step',exact:true}).click()
+ assert((await p.locator('.metrics').innerText()).includes(run.records[1].do[0].toFixed(2)))
+ await tank.selectOption('4');await p.getByLabel('ASM1 playback time').press('End')
+ assert((await p.locator('.metrics').innerText()).includes(run.records[288].energy_kwh[4].toFixed(2)))
+ if(process.env.AERA_CAPTURE) await p.screenshot({path:process.env.AERA_CAPTURE,fullPage:true})
+ await p.getByRole('button',{name:/ASM1 benchmark/}).click();const rerun=p.waitForResponse(r=>r.url().endsWith('/api/asm1/benchmark'));await p.getByRole('button',{name:'Run numerical verification'}).click();const result=await(await rerun).json()
+ await p.getByRole('status').filter({hasText:'Computed'}).waitFor();console.log(JSON.stringify({benchmark:result.diagnostics,effluent:result.effluent[9],frames:run.records.length,peak:Math.max(...run.records.map(x=>x.effluent_nh4))}))
+}finally{await browser.close()}})().catch(e=>{console.error(e);process.exitCode=1})

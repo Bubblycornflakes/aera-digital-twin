@@ -1,0 +1,554 @@
+{
+ "site": "Demo works (synthetic data)",
+ "generated_by": "aera.site",
+ "synthetic": true,
+ "window": {
+  "start": "2026-10-14 00:00",
+  "end": "2026-11-03 22:45",
+  "timezone": "Europe/London",
+  "days": 21.0,
+  "warmup_days_excluded": 3.0
+ },
+ "scale_factor": 1.626,
+ "temperature": "follows your recorded temperature (mean 14.3, range 10.7 to 17.9 degrees Celsius)",
+ "current_control": {
+  "do_setpoint": 2.0,
+  "k_do": 25.0,
+  "ti_do": 0.002
+ },
+ "candidate": {
+  "so_ref": 1.7
+ },
+ "data_quality": {
+  "file": "historian.csv",
+  "rows_read": 2018,
+  "tags": {
+   "influent_flow": {
+    "column": "Q_in",
+    "unit_in": "m3/h",
+    "not_numeric": 0,
+    "out_of_range": 1,
+    "flatline": 0,
+    "filled": 1,
+    "coverage_pct": 100.0,
+    "longest_gap_hours": 0.0,
+    "median": 29694.612
+   },
+   "influent_nh4": {
+    "column": "NH4_in",
+    "unit_in": "mg/l",
+    "not_numeric": 1,
+    "out_of_range": 1,
+    "flatline": 0,
+    "filled": 2,
+    "coverage_pct": 100.0,
+    "longest_gap_hours": 0.0,
+    "median": 29.559
+   },
+   "influent_cod": {
+    "column": "COD_in",
+    "unit_in": "mg/l",
+    "not_numeric": 0,
+    "out_of_range": 0,
+    "flatline": 0,
+    "filled": 0,
+    "coverage_pct": 100.0,
+    "longest_gap_hours": 0.0,
+    "median": 375.7
+   },
+   "effluent_nh4": {
+    "column": "NH4_out",
+    "unit_in": "mg/l",
+    "not_numeric": 0,
+    "out_of_range": 0,
+    "flatline": 0,
+    "filled": 0,
+    "coverage_pct": 97.6,
+    "longest_gap_hours": 12.25,
+    "median": 2.759
+   },
+   "do_aerobic": {
+    "column": "DO_5",
+    "unit_in": "mg/l",
+    "not_numeric": 0,
+    "out_of_range": 0,
+    "flatline": 32,
+    "filled": 0,
+    "coverage_pct": 98.4,
+    "longest_gap_hours": 8.0,
+    "median": 2.004
+   },
+   "blower_power": {
+    "column": "Blower_kW",
+    "unit_in": "kW",
+    "not_numeric": 1,
+    "out_of_range": 0,
+    "flatline": 0,
+    "filled": 1,
+    "coverage_pct": 100.0,
+    "longest_gap_hours": 0.0,
+    "median": 340.149
+   },
+   "temperature": {
+    "column": "Temp_C",
+    "unit_in": "degC",
+    "not_numeric": 0,
+    "out_of_range": 0,
+    "flatline": 0,
+    "filled": 0,
+    "coverage_pct": 100.0,
+    "longest_gap_hours": 0.0,
+    "median": 14.248
+   }
+  },
+  "issues": [
+   "2 duplicate timestamp(s): the first row was kept, the others were dropped",
+   "effluent_nh4: longest gap after filling is 12.25 hours (ending 19 Oct 14:30 local time)",
+   "do_aerobic: longest gap after filling is 8 hours (ending 22 Oct 07:45 local time)",
+   "influent_flow: 1 value(s) outside the physical range removed",
+   "influent_nh4: 1 non-numeric value(s) ignored",
+   "influent_nh4: 1 value(s) outside the physical range removed",
+   "do_aerobic: 32 value(s) in a stuck sensor run of 6 h or more removed",
+   "blower_power: 1 non-numeric value(s) ignored"
+  ],
+  "notes": [
+   "4 repeated local timestamp(s) were resolved as the autumn clock change (the hour that happens twice)"
+  ],
+  "cadence_minutes": 15.0,
+  "timezone": "Europe/London",
+  "start": "2026-10-14 00:00",
+  "end": "2026-11-03 22:45",
+  "days": 20.99,
+  "step_minutes": 15,
+  "rows_after_resampling": 2016,
+  "flow_to_design_ratio": 0.99,
+  "windows": [
+   {
+    "start": "2026-10-14 00:00",
+    "end": "2026-11-03 22:45",
+    "days": 20.99
+   }
+  ]
+ },
+ "validation": {
+  "status": "validated",
+  "indicators": {
+   "effluent_nh4": {
+    "n": 18,
+    "nse": 0.995,
+    "bias_pct": -2.2,
+    "bias_abs": -0.079,
+    "r2": 0.997,
+    "observed_std": 1.7583,
+    "ok": true,
+    "scorable": true
+   },
+   "aeration_energy": {
+    "n": 18,
+    "nse": 0.997,
+    "bias_pct": -0.0,
+    "bias_abs": -0.07,
+    "r2": 0.998,
+    "observed_std": 242.199,
+    "ok": true,
+    "scorable": true,
+    "calibration_factor": 1.349
+   },
+   "do_aerobic": {
+    "n": 18,
+    "nse": 0.173,
+    "bias_pct": 0.0,
+    "bias_abs": 0.001,
+    "r2": 0.211,
+    "observed_std": 0.0065,
+    "kind": "level",
+    "mae": 0.003,
+    "ok": true,
+    "scorable": true
+   }
+  },
+  "reasons": [
+   "effluent_nh4: NSE 0.995 (needs 0.5), bias -2.2% or -0.079 mg/l (needs within 20% or 0.3 mg/l): pass",
+   "aeration_energy: day-to-day shape NSE 0.997 (needs 0.5); model energy had to be scaled by 1.35 to match your blowers (believable range 0.5 to 2): pass. The scaling fixes the level only, so only the shape is tested.",
+   "do_aerobic: daily values are off by 0.003 mg/l on average (needs 0.3 or less): pass. DO is held near its setpoint, so it barely varies and Nash-Sutcliffe is not used. This is a weak check: the model is driven to the setpoint you configured."
+  ],
+  "days_compared": 18,
+  "thresholds": {
+   "nse_min": 0.5,
+   "bias_max_pct": 20.0,
+   "do_mae_max": 0.3,
+   "min_days_compared": 7,
+   "nh4_abs_bias_mg_l": 0.3,
+   "energy_factor_range": [
+    0.5,
+    2.0
+   ]
+  },
+  "evaluated_on": "all 18 days after warm-up"
+ },
+ "calibration": null,
+ "consents": [
+  {
+   "baseline": {
+    "name": "Ammonia 95-percentile",
+    "tag": "effluent_nh4",
+    "kind": "percentile",
+    "limit": 6.0,
+    "samples": 18,
+    "status": "exceeds",
+    "value": 6.249,
+    "exceedances": 2,
+    "margin_pct": -4.2,
+    "detail": "95th percentile 6.25 against a limit of 6; days are the works' local calendar days"
+   },
+   "candidate": {
+    "name": "Ammonia 95-percentile",
+    "tag": "effluent_nh4",
+    "kind": "percentile",
+    "limit": 6.0,
+    "samples": 18,
+    "status": "exceeds",
+    "value": 6.505,
+    "exceedances": 3,
+    "margin_pct": -8.4,
+    "detail": "95th percentile 6.51 against a limit of 6; days are the works' local calendar days"
+   }
+  },
+  {
+   "baseline": {
+    "name": "Ammonia annual mean",
+    "tag": "effluent_nh4",
+    "kind": "annual_mean",
+    "limit": 4.0,
+    "samples": 18,
+    "status": "within",
+    "value": 3.484,
+    "exceedances": 6,
+    "margin_pct": 12.9,
+    "detail": "mean 3.48 against a limit of 4 (a short window only indicates the annual mean); days are the works' local calendar days"
+   },
+   "candidate": {
+    "name": "Ammonia annual mean",
+    "tag": "effluent_nh4",
+    "kind": "annual_mean",
+    "limit": 4.0,
+    "samples": 18,
+    "status": "within",
+    "value": 3.642,
+    "exceedances": 6,
+    "margin_pct": 8.9,
+    "detail": "mean 3.64 against a limit of 4 (a short window only indicates the annual mean); days are the works' local calendar days"
+   }
+  }
+ ],
+ "low_do_share": {
+  "baseline": 0.0,
+  "candidate": 0.0
+ },
+ "appraisal": {
+  "baseline": {
+   "days": 18.0,
+   "calibrated": true,
+   "energy_kwh": 143863.9,
+   "energy_kwh_per_day": 7992.4,
+   "cost_gbp": 35965.98,
+   "cost_gbp_range": [
+    30571.08,
+    41360.88
+   ],
+   "carbon_t": 18.84,
+   "carbon_t_range": [
+    16.014,
+    21.666
+   ],
+   "annualised": {
+    "energy_kwh": 2917240,
+    "cost_gbp": 729310,
+    "carbon_t": 382.0,
+    "note": "Extrapolated from the window; valid only if the window is typical of the year."
+   }
+  },
+  "candidate": {
+   "days": 18.0,
+   "calibrated": true,
+   "energy_kwh": 141597.3,
+   "energy_kwh_per_day": 7866.5,
+   "cost_gbp": 35399.33,
+   "cost_gbp_range": [
+    30089.43,
+    40709.23
+   ],
+   "carbon_t": 18.544,
+   "carbon_t_range": [
+    15.762,
+    21.325
+   ],
+   "annualised": {
+    "energy_kwh": 2871279,
+    "cost_gbp": 717820,
+    "carbon_t": 376.0,
+    "note": "Extrapolated from the window; valid only if the window is typical of the year."
+   }
+  },
+  "difference": {
+   "energy_kwh": -2266.6,
+   "energy_pct": -1.58,
+   "cost_gbp": -566.65,
+   "carbon_t": -0.296
+  }
+ },
+ "recommendation": {
+  "status": "rejected",
+  "advisory_only": true,
+  "reason": "The candidate fails: No modelled consent made worse.",
+  "checks": [
+   {
+    "name": "Setpoint inside the allowed range",
+    "ok": true,
+    "detail": "1.7 against 1 to 3"
+   },
+   {
+    "name": "Controller settings inside the tested ranges",
+    "ok": true,
+    "detail": "within the ranges tested in the benchmark"
+   },
+   {
+    "name": "No modelled consent made worse",
+    "ok": false,
+    "detail": "Ammonia 95-percentile"
+   },
+   {
+    "name": "No more time at low DO than today",
+    "ok": true,
+    "detail": "0.0% against 0.0% (limit 1% or today's value)"
+   }
+  ],
+  "staged_setpoints": [],
+  "consents_without_a_check": [],
+  "statement": "This tool does not read from or write to any plant control system. Any change is made by people, not by this software."
+ },
+ "sweep": [
+  {
+   "so_ref": 1.0,
+   "energy_kwh_per_day": 7559.7,
+   "cost_gbp": 34018.72,
+   "consents_exceeded": [
+    "Ammonia 95-percentile",
+    "Ammonia annual mean"
+   ],
+   "low_do_pct": 0.0,
+   "mean_effluent_nh4": 4.33
+  },
+  {
+   "so_ref": 1.5,
+   "energy_kwh_per_day": 7783.1,
+   "cost_gbp": 35023.91,
+   "consents_exceeded": [
+    "Ammonia 95-percentile"
+   ],
+   "low_do_pct": 0.0,
+   "mean_effluent_nh4": 3.78
+  },
+  {
+   "so_ref": 2.0,
+   "energy_kwh_per_day": 7992.4,
+   "cost_gbp": 35965.98,
+   "consents_exceeded": [
+    "Ammonia 95-percentile"
+   ],
+   "low_do_pct": 0.0,
+   "mean_effluent_nh4": 3.48
+  },
+  {
+   "so_ref": 2.5,
+   "energy_kwh_per_day": 8216.9,
+   "cost_gbp": 36975.88,
+   "consents_exceeded": [],
+   "low_do_pct": 0.0,
+   "mean_effluent_nh4": 3.29
+  },
+  {
+   "so_ref": 3.0,
+   "energy_kwh_per_day": 8470.6,
+   "cost_gbp": 38117.6,
+   "consents_exceeded": [],
+   "low_do_pct": 0.0,
+   "mean_effluent_nh4": 3.16
+  }
+ ],
+ "assumptions": [
+  "The plant is the IWA BSM1 benchmark scaled to your design flow (similarity scaling). Your real tank layout, aeration system and settlers differ.",
+  "Influent composition is estimated from measured flow, ammonium and (if given) COD using benchmark fractions.",
+  "Temperature follows your recorded temperature (mean 14.3, range 10.7 to 17.9 degrees Celsius). The temperature coefficients are typical literature values for activated sludge, not calibrated to your works; calibration does not fit them.",
+  "Sensors are treated as ideal; the real DO controller's noise and delay are not modelled, and the model's DO is driven to the setpoint you configured.",
+  "Energy is the model's aeration energy, scaled to your recorded blower energy where you gave blower power. The scaling fixes the level, so only day-to-day shape is tested.",
+  "A 'sample' for consent checks is a flow-weighted daily mean on local calendar days, which is not how your permit is sampled.",
+  "Cost and carbon ranges reflect only the tariff and carbon-factor uncertainty you configured, not model or calibration error."
+ ],
+ "series": {
+  "effluent_nh4": {
+   "day": [
+    "2026-10-17",
+    "2026-10-18",
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21",
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-24",
+    "2026-10-25",
+    "2026-10-26",
+    "2026-10-27",
+    "2026-10-28",
+    "2026-10-29",
+    "2026-10-30",
+    "2026-10-31",
+    "2026-11-01",
+    "2026-11-02",
+    "2026-11-03"
+   ],
+   "baseline": [
+    2.128,
+    2.161,
+    0.971,
+    0.84,
+    2.448,
+    3.401,
+    3.373,
+    3.621,
+    3.666,
+    1.947,
+    1.598,
+    4.229,
+    5.718,
+    5.983,
+    6.19,
+    6.585,
+    4.43,
+    3.423
+   ],
+   "candidate": [
+    2.226,
+    2.25,
+    1.032,
+    0.884,
+    2.539,
+    3.563,
+    3.547,
+    3.761,
+    3.852,
+    2.072,
+    1.679,
+    4.377,
+    5.93,
+    6.211,
+    6.438,
+    6.884,
+    4.687,
+    3.628
+   ],
+   "observed": [
+    2.186,
+    2.121,
+    1.321,
+    0.897,
+    2.561,
+    3.462,
+    3.469,
+    3.568,
+    3.649,
+    2.034,
+    1.668,
+    4.27,
+    5.777,
+    6.095,
+    6.327,
+    6.567,
+    4.569,
+    3.6
+   ]
+  },
+  "aeration_kwh_d": {
+   "day": [
+    "2026-10-17",
+    "2026-10-18",
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21",
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-24",
+    "2026-10-25",
+    "2026-10-26",
+    "2026-10-27",
+    "2026-10-28",
+    "2026-10-29",
+    "2026-10-30",
+    "2026-10-31",
+    "2026-11-01",
+    "2026-11-02",
+    "2026-11-03"
+   ],
+   "baseline": [
+    8297.377,
+    8244.925,
+    7684.48,
+    7600.712,
+    8144.089,
+    8257.237,
+    8218.543,
+    8184.684,
+    8187.885,
+    7715.731,
+    7645.513,
+    8039.77,
+    8095.102,
+    8087.431,
+    8005.694,
+    8022.356,
+    7773.669,
+    7635.712
+   ],
+   "candidate": [
+    8154.123,
+    8102.313,
+    7587.464,
+    7505.44,
+    8009.196,
+    8111.333,
+    8078.879,
+    8043.395,
+    8049.194,
+    7620.967,
+    7548.775,
+    7903.25,
+    7953.3,
+    7947.569,
+    7869.886,
+    7886.064,
+    7667.322,
+    7537.532
+   ],
+   "observed": [
+    8309.667,
+    8231.78,
+    7693.808,
+    7594.491,
+    8147.252,
+    8260.032,
+    8219.496,
+    8170.187,
+    8166.675,
+    7729.002,
+    7633.642,
+    8027.692,
+    8085.373,
+    8099.885,
+    8020.459,
+    8032.12,
+    7792.499,
+    7644.887
+   ]
+  }
+ }
+}

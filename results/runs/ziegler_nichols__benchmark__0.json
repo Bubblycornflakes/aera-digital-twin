@@ -1,0 +1,177 @@
+{
+ "tuner": "ziegler_nichols",
+ "plant": "benchmark",
+ "seed": 0,
+ "budget": 40,
+ "stage": 1,
+ "model_version": "2",
+ "fingerprint": "f642ace9210ed707",
+ "trials": 3,
+ "answer": {
+  "so_ref": 2.0,
+  "k_do": 136.95733300358353,
+  "ti_do": 0.0041751241369784005,
+  "kla_max": 360.0
+ },
+ "feasible": false,
+ "aeration_energy_kwh_d": 3716.0,
+ "reference_energy_kwh_d": 3700.5,
+ "saving_pct": -0.42,
+ "scenarios_failed": [
+  "dry_sensor_fault"
+ ],
+ "failures": [
+  {
+   "scenario": "dry_sensor_fault",
+   "rule": "snh",
+   "share": 0.1994,
+   "reference": 0.186,
+   "excess": 0.0084
+  }
+ ],
+ "scenarios": {
+  "rain": {
+   "aeration_energy_kwh_d": 3674.3994001870865,
+   "eqi": 8183.443986756997,
+   "reference_energy_kwh_d": 3672.9768250682723,
+   "reference_eqi": 8183.098292576875,
+   "share_over_limit": {
+    "total_n": 0.11160714285714286,
+    "total_cod": 0.0,
+    "snh": 0.26785714285714285,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.0,
+   "reference_share_over_limit": {
+    "total_n": 0.11011904761904762,
+    "total_cod": 0.0,
+    "snh": 0.26785714285714285,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "feasible": true,
+   "failures": [],
+   "violation": 0
+  },
+  "storm": {
+   "aeration_energy_kwh_d": 3723.382656764698,
+   "eqi": 7220.465295597735,
+   "reference_energy_kwh_d": 3722.3109419664556,
+   "reference_eqi": 7221.883100129221,
+   "share_over_limit": {
+    "total_n": 0.15327380952380953,
+    "total_cod": 0.0,
+    "snh": 0.26785714285714285,
+    "tss": 0.002976190476190476,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.0,
+   "reference_share_over_limit": {
+    "total_n": 0.15476190476190477,
+    "total_cod": 0.0,
+    "snh": 0.26785714285714285,
+    "tss": 0.002976190476190476,
+    "bod5": 0.0
+   },
+   "feasible": true,
+   "failures": [],
+   "violation": 0
+  },
+  "dry_return_liquor": {
+   "aeration_energy_kwh_d": 3712.8173608984707,
+   "eqi": 6407.4191934906885,
+   "reference_energy_kwh_d": 3711.6118360020796,
+   "reference_eqi": 6407.35418840062,
+   "share_over_limit": {
+    "total_n": 0.28273809523809523,
+    "total_cod": 0.0,
+    "snh": 0.19940476190476192,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.0,
+   "reference_share_over_limit": {
+    "total_n": 0.28125,
+    "total_cod": 0.0,
+    "snh": 0.19940476190476192,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "feasible": true,
+   "failures": [],
+   "violation": 0
+  },
+  "dry_sensor_fault": {
+   "aeration_energy_kwh_d": 3707.563185113585,
+   "eqi": 6181.7170522949355,
+   "reference_energy_kwh_d": 3643.9448658779993,
+   "reference_eqi": 6150.943888758178,
+   "share_over_limit": {
+    "total_n": 0.16964285714285715,
+    "total_cod": 0.0,
+    "snh": 0.19940476190476192,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.008928571428571428,
+   "reference_share_over_limit": {
+    "total_n": 0.16815476190476192,
+    "total_cod": 0.0,
+    "snh": 0.18601190476190477,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "feasible": false,
+   "failures": [
+    {
+     "rule": "snh",
+     "share": 0.1994,
+     "reference": 0.186,
+     "excess": 0.0084
+    }
+   ],
+   "violation": 0.0084
+  },
+  "rain_liquor_and_fault": {
+   "aeration_energy_kwh_d": 3761.8991623780366,
+   "eqi": 8530.915156655374,
+   "reference_energy_kwh_d": 3751.5805768006635,
+   "reference_eqi": 8527.550170464221,
+   "share_over_limit": {
+    "total_n": 0.15476190476190477,
+    "total_cod": 0.0,
+    "snh": 0.2857142857142857,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.0,
+   "reference_share_over_limit": {
+    "total_n": 0.15327380952380953,
+    "total_cod": 0.0,
+    "snh": 0.2857142857142857,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "feasible": true,
+   "failures": [],
+   "violation": 0
+  }
+ },
+ "history": [
+  {
+   "params": {
+    "so_ref": 2.0,
+    "k_do": 136.95733300358353,
+    "ti_do": 0.0041751241369784005,
+    "kla_max": 360.0
+   },
+   "energy": 3695.275944222477,
+   "feasible": true,
+   "violation": 0
+  }
+ ],
+ "seconds": 407,
+ "scored_model_version": "2",
+ "scored_fingerprint": "f642ace9210ed707"
+}

@@ -1,0 +1,4 @@
+# Architecture
+The Python process owns units, integration and control. aera/model.py exposes pure balance, controller, disturbance and reference functions plus the seeded experiment runner. The CLI serialises results for independent analysis. FastAPI validates bounds and runs the synchronous handler in its worker thread pool. POST /api/simulation returns the complete series, settings, timestamp, solver and version. GET /api/reference returns annual quantities. The client is local and single user.
+
+React and TypeScript submit experiments through a Vite same-origin proxy. ECharts renders stored states. Browser frame timing never changes engineering results. Use the existing series as the input to playback and R3F. Future optimisers will call the Python model directly and persist trial metadata, constraints and held-out scores. Keep secrets server-side and introduce job limits before public deployment.

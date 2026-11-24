@@ -1,0 +1,291 @@
+{
+ "tuner": "llm_ollama_qwen3_8b",
+ "plant": "benchmark",
+ "seed": 1,
+ "budget": 40,
+ "stage": 1,
+ "trials": 6,
+ "nudges": 10,
+ "history": [
+  {
+   "params": {
+    "so_ref": 1.8,
+    "k_do": 30.0,
+    "ti_do": 0.001,
+    "kla_max": 360.0
+   },
+   "energy": 3662.529404519848,
+   "feasible": false,
+   "violation": 0.0054
+  },
+  {
+   "params": {
+    "so_ref": 1.8,
+    "k_do": 25.0,
+    "ti_do": 0.002,
+    "kla_max": 360.0
+   },
+   "energy": 3658.4601519540947,
+   "feasible": false,
+   "violation": 0.0069
+  },
+  {
+   "params": {
+    "so_ref": 1.8,
+    "k_do": 20.0,
+    "ti_do": 0.003,
+    "kla_max": 360.0
+   },
+   "energy": 3657.0820054128153,
+   "feasible": false,
+   "violation": 0.0069
+  },
+  {
+   "params": {
+    "so_ref": 1.7,
+    "k_do": 20.0,
+    "ti_do": 0.003,
+    "kla_max": 360.0
+   },
+   "energy": 3637.5869649790375,
+   "feasible": false,
+   "violation": 0.0129
+  },
+  {
+   "params": {
+    "so_ref": 1.7,
+    "k_do": 15.0,
+    "ti_do": 0.003,
+    "kla_max": 360.0
+   },
+   "energy": 3636.825426730571,
+   "feasible": false,
+   "violation": 0.0143
+  },
+  {
+   "params": {
+    "so_ref": 1.7,
+    "k_do": 10.0,
+    "ti_do": 0.005,
+    "kla_max": 360.0
+   },
+   "energy": 3631.7731457096647,
+   "feasible": false,
+   "violation": 0.0188
+  }
+ ],
+ "seconds": 0,
+ "answer": {
+  "so_ref": 1.7,
+  "k_do": 10.0,
+  "ti_do": 0.005,
+  "kla_max": 360.0
+ },
+ "feasible": false,
+ "aeration_energy_kwh_d": 3629.7,
+ "reference_energy_kwh_d": 3700.5,
+ "saving_pct": 1.91,
+ "scenarios_failed": [
+  "dry_return_liquor",
+  "dry_sensor_fault",
+  "rain",
+  "rain_liquor_and_fault",
+  "storm"
+ ],
+ "failures": [
+  {
+   "scenario": "rain",
+   "rule": "snh",
+   "share": 0.3155,
+   "reference": 0.2679,
+   "excess": 0.0426
+  },
+  {
+   "scenario": "storm",
+   "rule": "snh",
+   "share": 0.2887,
+   "reference": 0.2679,
+   "excess": 0.0158
+  },
+  {
+   "scenario": "dry_return_liquor",
+   "rule": "snh",
+   "share": 0.2455,
+   "reference": 0.1994,
+   "excess": 0.0411
+  },
+  {
+   "scenario": "dry_sensor_fault",
+   "rule": "snh",
+   "share": 0.2262,
+   "reference": 0.186,
+   "excess": 0.0352
+  },
+  {
+   "scenario": "rain_liquor_and_fault",
+   "rule": "snh",
+   "share": 0.308,
+   "reference": 0.2857,
+   "excess": 0.0173
+  }
+ ],
+ "scenarios": {
+  "rain": {
+   "aeration_energy_kwh_d": 3602.4136430672743,
+   "eqi": 8256.151829576193,
+   "reference_energy_kwh_d": 3672.9768250682723,
+   "reference_eqi": 8183.098292576875,
+   "share_over_limit": {
+    "total_n": 0.10416666666666667,
+    "total_cod": 0.0,
+    "snh": 0.31547619047619047,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.0,
+   "reference_share_over_limit": {
+    "total_n": 0.11011904761904762,
+    "total_cod": 0.0,
+    "snh": 0.26785714285714285,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "feasible": false,
+   "failures": [
+    {
+     "rule": "snh",
+     "share": 0.3155,
+     "reference": 0.2679,
+     "excess": 0.0426
+    }
+   ],
+   "violation": 0.0426
+  },
+  "storm": {
+   "aeration_energy_kwh_d": 3651.2025311948287,
+   "eqi": 7287.109561851474,
+   "reference_energy_kwh_d": 3722.3109419664556,
+   "reference_eqi": 7221.883100129221,
+   "share_over_limit": {
+    "total_n": 0.13988095238095238,
+    "total_cod": 0.0,
+    "snh": 0.28869047619047616,
+    "tss": 0.002976190476190476,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.0,
+   "reference_share_over_limit": {
+    "total_n": 0.15476190476190477,
+    "total_cod": 0.0,
+    "snh": 0.26785714285714285,
+    "tss": 0.002976190476190476,
+    "bod5": 0.0
+   },
+   "feasible": false,
+   "failures": [
+    {
+     "rule": "snh",
+     "share": 0.2887,
+     "reference": 0.2679,
+     "excess": 0.0158
+    }
+   ],
+   "violation": 0.0158
+  },
+  "dry_return_liquor": {
+   "aeration_energy_kwh_d": 3643.517747251813,
+   "eqi": 6466.702120232895,
+   "reference_energy_kwh_d": 3711.6118360020796,
+   "reference_eqi": 6407.35418840062,
+   "share_over_limit": {
+    "total_n": 0.26339285714285715,
+    "total_cod": 0.0,
+    "snh": 0.24553571428571427,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.0,
+   "reference_share_over_limit": {
+    "total_n": 0.28125,
+    "total_cod": 0.0,
+    "snh": 0.19940476190476192,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "feasible": false,
+   "failures": [
+    {
+     "rule": "snh",
+     "share": 0.2455,
+     "reference": 0.1994,
+     "excess": 0.0411
+    }
+   ],
+   "violation": 0.0411
+  },
+  "dry_sensor_fault": {
+   "aeration_energy_kwh_d": 3574.9928851673667,
+   "eqi": 6227.853065949979,
+   "reference_energy_kwh_d": 3643.9448658779993,
+   "reference_eqi": 6150.943888758178,
+   "share_over_limit": {
+    "total_n": 0.15773809523809523,
+    "total_cod": 0.0,
+    "snh": 0.2261904761904762,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.0,
+   "reference_share_over_limit": {
+    "total_n": 0.16815476190476192,
+    "total_cod": 0.0,
+    "snh": 0.18601190476190477,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "feasible": false,
+   "failures": [
+    {
+     "rule": "snh",
+     "share": 0.2262,
+     "reference": 0.186,
+     "excess": 0.0352
+    }
+   ],
+   "violation": 0.0352
+  },
+  "rain_liquor_and_fault": {
+   "aeration_energy_kwh_d": 3676.4324924809266,
+   "eqi": 8583.74522661678,
+   "reference_energy_kwh_d": 3751.5805768006635,
+   "reference_eqi": 8527.550170464221,
+   "share_over_limit": {
+    "total_n": 0.14583333333333334,
+    "total_cod": 0.0,
+    "snh": 0.3080357142857143,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.0,
+   "reference_share_over_limit": {
+    "total_n": 0.15327380952380953,
+    "total_cod": 0.0,
+    "snh": 0.2857142857142857,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "feasible": false,
+   "failures": [
+    {
+     "rule": "snh",
+     "share": 0.308,
+     "reference": 0.2857,
+     "excess": 0.0173
+    }
+   ],
+   "violation": 0.0173
+  }
+ },
+ "scored_model_version": "2",
+ "scored_fingerprint": "f642ace9210ed707"
+}

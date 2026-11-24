@@ -1,0 +1,190 @@
+{
+ "tuner": "ziegler_nichols",
+ "plant": "slow_nitrifiers",
+ "seed": 0,
+ "budget": 40,
+ "stage": 1,
+ "model_version": "2",
+ "fingerprint": "f642ace9210ed707",
+ "trials": 3,
+ "answer": {
+  "so_ref": 2.0,
+  "k_do": 131.54430480615147,
+  "ti_do": 0.004292332807950482,
+  "kla_max": 360.0
+ },
+ "feasible": false,
+ "aeration_energy_kwh_d": 3725.7,
+ "reference_energy_kwh_d": 3709.6,
+ "saving_pct": -0.43,
+ "scenarios_failed": [
+  "dry_sensor_fault"
+ ],
+ "failures": [
+  {
+   "scenario": "dry_sensor_fault",
+   "rule": "snh",
+   "share": 0.6815,
+   "reference": 0.6696,
+   "excess": 0.0069
+  },
+  {
+   "scenario": "dry_sensor_fault",
+   "rule": "low_do",
+   "share": 0.0134,
+   "reference": 0.01,
+   "excess": 0.0034
+  }
+ ],
+ "scenarios": {
+  "rain": {
+   "aeration_energy_kwh_d": 3663.5591173214634,
+   "eqi": 9930.154798891048,
+   "reference_energy_kwh_d": 3662.5892071575495,
+   "reference_eqi": 9928.80559570329,
+   "share_over_limit": {
+    "total_n": 0.37797619047619047,
+    "total_cod": 0.0,
+    "snh": 0.7633928571428571,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.0,
+   "reference_share_over_limit": {
+    "total_n": 0.37797619047619047,
+    "total_cod": 0.0,
+    "snh": 0.7633928571428571,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "feasible": true,
+   "failures": [],
+   "violation": 0
+  },
+  "storm": {
+   "aeration_energy_kwh_d": 3727.543886548776,
+   "eqi": 8835.704638860752,
+   "reference_energy_kwh_d": 3726.605922405669,
+   "reference_eqi": 8833.968642796079,
+   "share_over_limit": {
+    "total_n": 0.37202380952380953,
+    "total_cod": 0.0,
+    "snh": 0.7202380952380952,
+    "tss": 0.002976190476190476,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.0,
+   "reference_share_over_limit": {
+    "total_n": 0.37202380952380953,
+    "total_cod": 0.0,
+    "snh": 0.7202380952380952,
+    "tss": 0.002976190476190476,
+    "bod5": 0.0
+   },
+   "feasible": true,
+   "failures": [],
+   "violation": 0
+  },
+  "dry_return_liquor": {
+   "aeration_energy_kwh_d": 3742.7564796575452,
+   "eqi": 7805.361455620737,
+   "reference_energy_kwh_d": 3741.743817752187,
+   "reference_eqi": 7804.177861588705,
+   "share_over_limit": {
+    "total_n": 0.5446428571428571,
+    "total_cod": 0.0,
+    "snh": 0.6666666666666666,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.0,
+   "reference_share_over_limit": {
+    "total_n": 0.5446428571428571,
+    "total_cod": 0.0,
+    "snh": 0.6666666666666666,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "feasible": true,
+   "failures": [],
+   "violation": 0
+  },
+  "dry_sensor_fault": {
+   "aeration_energy_kwh_d": 3739.946371148839,
+   "eqi": 7596.20942119036,
+   "reference_energy_kwh_d": 3670.5194003006404,
+   "reference_eqi": 7535.475563085557,
+   "share_over_limit": {
+    "total_n": 0.4806547619047619,
+    "total_cod": 0.0,
+    "snh": 0.6815476190476191,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.013392857142857142,
+   "reference_share_over_limit": {
+    "total_n": 0.48214285714285715,
+    "total_cod": 0.0,
+    "snh": 0.6696428571428571,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "feasible": false,
+   "failures": [
+    {
+     "rule": "snh",
+     "share": 0.6815,
+     "reference": 0.6696,
+     "excess": 0.0069
+    },
+    {
+     "rule": "low_do",
+     "share": 0.0134,
+     "reference": 0.01,
+     "excess": 0.0034
+    }
+   ],
+   "violation": 0.0103
+  },
+  "rain_liquor_and_fault": {
+   "aeration_energy_kwh_d": 3754.6270822794245,
+   "eqi": 10278.59263864401,
+   "reference_energy_kwh_d": 3746.6367572215386,
+   "reference_eqi": 10274.717995906927,
+   "share_over_limit": {
+    "total_n": 0.44345238095238093,
+    "total_cod": 0.0,
+    "snh": 0.7440476190476191,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "low_do_share": 0.0,
+   "reference_share_over_limit": {
+    "total_n": 0.4419642857142857,
+    "total_cod": 0.0,
+    "snh": 0.7395833333333334,
+    "tss": 0.0,
+    "bod5": 0.0
+   },
+   "feasible": true,
+   "failures": [],
+   "violation": 0
+  }
+ },
+ "history": [
+  {
+   "params": {
+    "so_ref": 2.0,
+    "k_do": 131.54430480615147,
+    "ti_do": 0.004292332807950482,
+    "kla_max": 360.0
+   },
+   "energy": 3729.289499088615,
+   "feasible": true,
+   "violation": 0
+  }
+ ],
+ "seconds": 393,
+ "scored_model_version": "2",
+ "scored_fingerprint": "f642ace9210ed707"
+}

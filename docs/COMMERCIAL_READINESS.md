@@ -1,0 +1,6 @@
+# Current release classification
+Local research workbench. The browser runs the educational engine. The separate ASM1 kernel has reproducible reactor verification. Neither has facility calibration. Keep localhost binding and offline operation; production readiness depends on demonstrable site accuracy, data rights and access controls.
+
+Design projects around immutable plant/model/parameter revisions. Store scenario and controller presets as revisions referencing a plant; each run captures configuration, data hashes, code version, seed, time convention, solver settings and status. Persist raw data independently of derived time series and append actor/time/reason to audit events. CSV, JSON and PDF exports should identify scope, units, uncertainty, training vs evaluation periods and all constraint failures. Test backup recovery and migrations before accepting site work.
+
+For multi-user deployment require site-scoped roles (viewer, engineer, reviewer), server-side authorisation at every data boundary, OIDC, TLS, secret storage, resource-limited jobs, import validation and explicit retention policies. Conduct access isolation, concurrency, export provenance and deletion/recovery tests. Block write-capable plant integrations. The prototype currently has no tenant isolation or production identity layer.

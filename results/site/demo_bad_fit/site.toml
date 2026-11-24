@@ -1,0 +1,63 @@
+# Site configuration for the SYNTHETIC demo works. Every setting is explained in docs/START_HERE.md.
+[site]
+name = "Demo works (synthetic data)"
+design_flow_m3_d = 30000
+timezone = "Europe/London"
+
+[data]
+file = "historian.csv"
+timestamp_column = "Timestamp"
+timestamp_is_local = true       # clock time in the works' time zone, as most historians export it
+
+[data.tags.influent_flow]
+column = "Q_in"
+unit = "m3/h"
+[data.tags.influent_nh4]
+column = "NH4_in"
+unit = "mg/l"
+[data.tags.influent_cod]
+column = "COD_in"
+unit = "mg/l"
+[data.tags.effluent_nh4]
+column = "NH4_out"
+unit = "mg/l"
+[data.tags.do_aerobic]
+column = "DO_5"
+unit = "mg/l"
+[data.tags.blower_power]
+column = "Blower_kW"
+unit = "kW"
+# Optional: a mixed liquor temperature probe. Without it the model assumes site.temperature_c (default 15).
+[data.tags.temperature]
+column = "Temp_C"
+unit = "degC"
+
+[control]                       # how DO is controlled today
+do_setpoint = 2.0
+k_do = 25.0
+ti_do = 0.002
+
+[guardrails]
+so_ref_min = 1.0
+so_ref_max = 3.0
+max_setpoint_step = 0.5
+
+[[consent]]                     # copy the numbers from your own permit
+name = "Ammonia 95-percentile"
+tag = "effluent_nh4"
+kind = "percentile"
+limit = 6.0
+percentile = 95
+upper_tier = 12.0
+
+[[consent]]
+name = "Ammonia annual mean"
+tag = "effluent_nh4"
+kind = "annual_mean"
+limit = 4.0
+
+[tariff]
+flat_gbp_per_kwh = 0.25         # replace with your contract price
+
+[carbon]
+kg_co2e_per_kwh = 0.13096       # replace with the current UK government factor

@@ -1,0 +1,3 @@
+# Design system
+Use the three supplied AERA renders for the target scene composition: basin central, plant navigation left, controls right, recorded histories below. Keep the large engineering viewport readable at laptop widths. The foundation workbench uses two panes until the scene is available.
+Use #07111F canvas, #0D1B2A panels, #26384C boundaries, #F1F5F9 text, cyan oxygen and amber ammonium traces. Reserve red for faults. Prefer Inter with installed system fallback, tabular figures and units next to every reading. Equipment labels should track actual scene positions. Water colour is an illustrative rendering convention. Playback must respect reduced motion and every displayed sample must agree with the chart cursor.

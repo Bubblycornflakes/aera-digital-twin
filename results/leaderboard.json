@@ -1,0 +1,189 @@
+[
+ {
+  "tuner": "bsm1_default",
+  "runs": 3,
+  "feasible_rate": 1.0,
+  "feasible_ci": [
+   0.438,
+   1.0
+  ],
+  "mean_saving_feasible_pct": 0.0,
+  "mean_trials": 0.0,
+  "common_failures": []
+ },
+ {
+  "tuner": "llm_ollama_qwen3_8b",
+  "runs": 3,
+  "feasible_rate": 0.333,
+  "feasible_ci": [
+   0.061,
+   0.792
+  ],
+  "mean_saving_feasible_pct": 0.0,
+  "mean_trials": 5.0,
+  "common_failures": [
+   [
+    "storm:snh",
+    2
+   ],
+   [
+    "dry_return_liquor:snh",
+    1
+   ],
+   [
+    "dry_sensor_fault:snh",
+    1
+   ]
+  ]
+ },
+ {
+  "tuner": "bayesian_optimisation",
+  "runs": 9,
+  "feasible_rate": 0.222,
+  "feasible_ci": [
+   0.063,
+   0.547
+  ],
+  "mean_saving_feasible_pct": 0.07,
+  "mean_trials": 40.0,
+  "common_failures": [
+   [
+    "rain:total_n",
+    5
+   ],
+   [
+    "rain_liquor_and_fault:snh",
+    4
+   ],
+   [
+    "dry_sensor_fault:low_do",
+    2
+   ]
+  ]
+ },
+ {
+  "tuner": "bayesian_optimisation_stage2",
+  "runs": 3,
+  "feasible_rate": 0.0,
+  "feasible_ci": [
+   0.0,
+   0.562
+  ],
+  "mean_saving_feasible_pct": null,
+  "mean_trials": 40.0,
+  "common_failures": [
+   [
+    "dry_sensor_fault:low_do",
+    2
+   ],
+   [
+    "rain:total_n",
+    2
+   ],
+   [
+    "dry_return_liquor:total_n",
+    1
+   ]
+  ]
+ },
+ {
+  "tuner": "differential_evolution",
+  "runs": 9,
+  "feasible_rate": 0.0,
+  "feasible_ci": [
+   0.0,
+   0.299
+  ],
+  "mean_saving_feasible_pct": null,
+  "mean_trials": 40.0,
+  "common_failures": [
+   [
+    "rain_liquor_and_fault:snh",
+    6
+   ],
+   [
+    "dry_sensor_fault:snh",
+    5
+   ],
+   [
+    "rain:total_n",
+    5
+   ]
+  ]
+ },
+ {
+  "tuner": "random_search",
+  "runs": 9,
+  "feasible_rate": 0.0,
+  "feasible_ci": [
+   0.0,
+   0.299
+  ],
+  "mean_saving_feasible_pct": null,
+  "mean_trials": 40.0,
+  "common_failures": [
+   [
+    "rain:total_n",
+    7
+   ],
+   [
+    "dry_sensor_fault:low_do",
+    4
+   ],
+   [
+    "dry_sensor_fault:snh",
+    4
+   ]
+  ]
+ },
+ {
+  "tuner": "random_search_stage2",
+  "runs": 3,
+  "feasible_rate": 0.0,
+  "feasible_ci": [
+   0.0,
+   0.562
+  ],
+  "mean_saving_feasible_pct": null,
+  "mean_trials": 40.0,
+  "common_failures": [
+   [
+    "dry_sensor_fault:low_do",
+    2
+   ],
+   [
+    "dry_sensor_fault:snh",
+    1
+   ],
+   [
+    "rain:snh",
+    1
+   ]
+  ]
+ },
+ {
+  "tuner": "ziegler_nichols",
+  "runs": 3,
+  "feasible_rate": 0.0,
+  "feasible_ci": [
+   0.0,
+   0.562
+  ],
+  "mean_saving_feasible_pct": null,
+  "mean_trials": 3.0,
+  "common_failures": [
+   [
+    "dry_sensor_fault:snh",
+    3
+   ],
+   [
+    "dry_sensor_fault:low_do",
+    1
+   ],
+   [
+    "rain_liquor_and_fault:snh",
+    1
+   ]
+  ]
+ }
+]
